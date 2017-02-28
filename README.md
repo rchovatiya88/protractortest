@@ -7,11 +7,11 @@
 Steps to get Protractor working on MAC, windows should be same.
 
 
-Step 1 - In the Terminal 
+Step 1 - In the Terminal
 
     Run this command - npm install -g protractor
 
-    Everything this should be green, if there is permission issue,
+    Everything should be green, if there is permission issue,
 
             type 'sudo npm install -g protractor'
 
