@@ -1,6 +1,16 @@
+
 exports.config = {
-seleniumAddress: 'http://localhost:4444/wd/hub',
-specs: ['todo-spec.js'],
-chromeOnly: true,
-directConnect: true,
+ directConnect: true,
+    
+    capabilities:{
+        'browserName': 'chrome'
+    },
+
+    framework: 'jasmine2',
+    specs: ['todo-spec.js'],
+
+    jasmineNodeOpts:{
+        defaultTimeoutInterval: 3000
+    }
+
 };
