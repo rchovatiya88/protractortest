@@ -1,17 +1,20 @@
-describe('angularjs homepage todo list', function() {
-   it('should add a todo', function() {
-     browser.get('https://angularjs.org');
+describe('FireLab website login', function() {
+  it('should do login', function() {
+    browser.get('http://beta.firelabinc.com/');
 
-     element(by.model('todoList.todoText')).sendKeys('write first protractor test');
-     element(by.css('[value="add"]')).click();
+    element(by.model('vm.user.login')).sendKeys('rchovatiya88@gmail.com');
+    element(by.model('vm.user.password')).sendKeys('Gorilla');
+    login_btn = element(by.css('.btn-lg'));
 
-     var todoList = element.all(by.repeater('todo in todoList.todos'));
-     expect(todoList.count()).toEqual(3);
-     expect(todoList.get(2).getText()).toEqual('write first protractor test');
+    login_btn.click().then(function() {
+      add_cust_btn = element(by.css('.btn-success'));
+      add_cust_btn.click();
+    });
 
-     // You wrote your first test, cross it off the list
-     todoList.get(2).element(by.css('input')).click();
-     var completedAmount = element.all(by.css('.done-true'));
-     expect(completedAmount.count()).toEqual(2);
-   });
- });
+    return browser.driver.wait(function() {
+       return browser.driver.getCurrentUrl().then(function(url) {
+           //return (/customers/).test(url);
+       });
+    }, 10000);
+  });
+});

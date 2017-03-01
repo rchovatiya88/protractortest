@@ -1,4 +1,6 @@
 exports.config = {
 seleniumAddress: 'http://localhost:4444/wd/hub',
-specs: ['todo-spec.js']
+specs: ['todo-spec.js'],
+chromeOnly: true,
+directConnect: true,
 };
