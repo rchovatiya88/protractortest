@@ -1,17 +1,11 @@
-describe('angularjs homepage todo list', function() {
-   it('should add a todo', function() {
-     browser.get('https://angularjs.org');
+describe("Test the Firelab applicaiton", function(){
 
-     element(by.model('todoList.todoText')).sendKeys('write first protractor test');
-     element(by.css('[value="add"]')).click();
+  it("Go to the Home page and login", function(){
 
-     var todoList = element.all(by.repeater('todo in todoList.todos'));
-     expect(todoList.count()).toEqual(3);
-     expect(todoList.get(2).getText()).toEqual('write first protractor test');
-
-     // You wrote your first test, cross it off the list
-     todoList.get(2).element(by.css('input')).click();
-     var completedAmount = element.all(by.css('.done-true'));
-     expect(completedAmount.count()).toEqual(2);
-   });
- });
+    browser.get("http://beta.firelabinc.com/");
+    element(by.model('vm.user.login')).sendKeys('rchovatiya88@gmail.com');
+    element(by.model('vm.user.password')).sendKeys('Gorilla');
+    browser.pause(1000)
+    login_btn = element(by.css('.btn-lg'));
+  })
+})
