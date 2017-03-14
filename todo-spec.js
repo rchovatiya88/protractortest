@@ -5,7 +5,7 @@ describe("Test the Firelab applicaiton", function(){
     browser.get("http://beta.firelabinc.com/");
     element(by.model('vm.user.login')).sendKeys('rchovatiya88@gmail.com');
     element(by.model('vm.user.password')).sendKeys('Gorilla');
-    browser.pause(1000)
+   
     login_btn = element(by.css('.btn-lg'));
   })
 })

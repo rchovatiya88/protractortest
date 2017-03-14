@@ -1,16 +1,11 @@
 
 exports.config = {
- directConnect: true,
-    
+ directConnect: false,
     capabilities:{
-        'browserName': 'chrome'
-    },
-
+        'browserName': 'chrome'},
     framework: 'jasmine2',
-    specs: ['todo-spec.js'],
-
+    specs: ['smokeTest.js'],
     jasmineNodeOpts:{
-        defaultTimeoutInterval: 3000
+        defaultTimeoutInterval: 30000
     }
-
 };
