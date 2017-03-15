@@ -7,10 +7,6 @@ exports.config = {
     },
 
     framework: 'jasmine2',
-    specs: ['todo-spec.js'],
-
-    jasmineNodeOpts:{
-        defaultTimeoutInterval: 3000
-    }
+    specs: ['todo-spec.js']
 
 };
